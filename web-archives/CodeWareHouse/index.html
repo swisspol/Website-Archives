@@ -1,0 +1,207 @@
+<!-- Header -->
+
+<HTML>
+
+	<HEAD>
+		<META http-equiv=content-type content="text/html;charset=ISO-8859-1">
+		<TITLE>Welcome to Pol's Code WareHouse</TITLE>
+		<CSSCRIPTDICT>
+			<SCRIPT><!--
+CSInit = new Array;
+function CSScriptInit() {
+if(typeof(skipPage) != "undefined") { if(skipPage) return; }
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+
+function CSClickReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return true; // dont follow link
+	else return false; // dont follow link
+}
+
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		if (actArray == null) return false;
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+
+// --></SCRIPT>
+		</CSSCRIPTDICT>
+		<CSACTIONDICT>
+			<SCRIPT><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button2',/*URL*/'menubar/graphics.jpg',/*URL*/'menubar/graphics2.jpg',/*URL*/'menubar/graphics3.jpg','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button3',/*URL*/'menubar/audio.jpg',/*URL*/'menubar/audio2.jpg',/*URL*/'menubar/audio3.jpg','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button4',/*URL*/'menubar/misc.jpg',/*URL*/'menubar/misc2.jpg',/*URL*/'menubar/misc3.jpg','');
+
+// --></SCRIPT>
+		</CSACTIONDICT>
+	</HEAD>
+
+	<BODY bgcolor="white" link="#2f4f4f" alink="silver" vlink="#696969" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" background="images/background.jpg" onload=CSScriptInit(); text=#3c3c3c>
+
+<!-- MenuBar -->
+
+		<TABLE border=0 cellpadding=0 cellspacing=0 width=740>
+		<TR><TD><IMG src="images/title.jpg" width=460 height=64 border=0></TD></TR>
+		<TR><TD><IMG src="menubar/home4.jpg" width=147 height=64 border=0><CSOBJ w=148 h=64 t=Button ht="menubar/graphics2.jpg" cl="menubar/graphics3.jpg"><A href="graphics.html" onmouseover="return CSIShow(/*CMP*/'button2',1)" onmouseout="return CSIShow(/*CMP*/'button2',0)" onclick="CSIShow(/*CMP*/'button2',2);return CSButtonReturn()"><IMG src="menubar/graphics.jpg" width=148 height=64 name=button2 border=0></A></CSOBJ><CSOBJ w=148 h=64 t=Button ht="menubar/audio2.jpg" cl="menubar/audio3.jpg"><A href="audio.html" onmouseover="return CSIShow(/*CMP*/'button3',1)" onmouseout="return CSIShow(/*CMP*/'button3',0)" onclick="CSIShow(/*CMP*/'button3',2);return CSButtonReturn()"><IMG src="menubar/audio.jpg" width=148 height=64 name=button3 border=0></A></CSOBJ><CSOBJ w=148 h=64 t=Button ht="menubar/misc2.jpg" cl="menubar/misc3.jpg"><A href="misc.html" onmouseover="return CSIShow(/*CMP*/'button4',1)" onmouseout="return CSIShow(/*CMP*/'button4',0)" onclick="CSIShow(/*CMP*/'button4',2);return CSButtonReturn()"><IMG src="menubar/misc.jpg" width=148 height=64 name=button4 border=0></A></CSOBJ><IMG src="menubar/end.jpg" width=149 height=64 border=0>
+		</TD></TR>
+		</TABLE>
+
+<!-- Content -->
+
+		<TABLE border=0 cellpadding=0 cellspacing=0 width=740>
+			<TR><TD>
+					<TABLE border=0 cellpadding=10 cellspacing=0 width=740>
+						<TR>
+							<TD width=30>&nbsp;</TD>
+<!-- News -->
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/news.jpg" width=28 height=42 border=0 align=left hspace=10><FONT size=4 face=Arial,Helvetica><B>Headline<BR>
+											News</B></FONT></P>
+								
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 7/29/2001</B><BR>
+		The folder utils were updated in the <A href="misc.html">Misc</A> section.<BR>
+  Added the source code for a custom list manager in the <A href="misc.html">Misc</A> section.<BR>
+  Added the source code of several custom dialog controls (color picker, pict box...) in the <A href="misc.html">Misc</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 2/18/2001</B><BR>
+		Added source code of a powerful 2D/3D audio engine in the <A href="audio.html">Audio</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 1/13/2001</B><BR>
+		Added source code for using the Navigation Services <I>really</I> easily in the <A href="misc.html">Misc</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/15/2000</B><BR>
+		
+		Updated the source code of the MP3 player based to fix a memory allocation bug.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/11/2000</B><BR>
+		Source code of a true asynchronous MP3 player based on the Sound Manager was added in the <A href="audio.html">Audio</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/11/2000</B><BR>
+		Source code of a true asynchronous QDesign player based on the Sound Manager was added in the <A href="audio.html">Audio</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/11/2000</B><BR>
+		Source code of utility routines to load and play MacOS sounds was added in the <A href="audio.html">Audio</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/11/2000</B><BR>
+		Added source code for screen capture in the <A href="graphics.html">Graphics</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/11/2000</B><BR>
+		Added source code for an ansynchronous spinning cursor in the <A href="misc.html">Misc</A> section.</FONT></P>
+<P><FONT face=Arial,Helvetica size=2><B>&gt; 11/05/2000</B><BR>
+		This web site is officialy opened.</FONT></P>
+
+							</TD>
+							<TD width=10>&nbsp;</TD>
+<!-- Cover -->
+							<TD valign=top width=460>
+								<P><FONT size=6 face=Arial,Helvetica><I>Welcome to Pol's web site!</I></FONT></P>
+								<CENTER><P><IMG height=200 width=200 src="_dynamic/logo.jpg"></P></CENTER>
+								<P><FONT size=5 face=Arial,Helvetica>Cool place for free MacOS source code!<I><B><BR>
+											</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This web site offers lots of sample code I've written the past years that covers many areas: Graphic, Sound, User interface, Files... Although it's not documented, this source code is quite clean so you shouldn't have any problem including it in your code.<BR>
+		<BR>
+		
+	All the code available on this web site is available free of charge and with unrestricted use - even for commercial applications.<BR>
+		<BR>
+		
+		Note that some sample code actually includes code from Apple's own sample code.<BR>
+	</FONT></P>
+
+								
+								<P>&nbsp;</P>
+								<P><FONT face=Arial,Helvetica><B>A little biography of the author :</B></FONT></P>
+								<P><FONT face=Arial,Helvetica size=2>My full name is Pierre-Olivier Latour (I'm French for those who wonder); I'm studying in Lausanne, Switzerland, and in my spare time, I'm the manager and also lead programmer for <A href="../index.html" target=_blank>French Touch</A>, a game company who's developping <A href="http://www.waterrace.com/" target=_blank>WaterRace</A>, a high-speed water racing game for the Mac.</FONT></P>
+								<P><FONT face=Arial,Helvetica size=2>You can reach me at <A href="mailto:pol@french-touch.net">pol@french-touch.net</A>. Feel free to drop me an e-mail and let me know what you think of this place!</FONT></P>
+								<P>&nbsp;</P>
+							</TD>
+						</TR>
+					</TABLE>
+				</TD></TR>
+
+<!-- Footer -->
+			<TR>
+				<TD height=15>&nbsp;</TD>
+			</TR>
+			<TR><TD>
+				
+<HR width=90%>
+<DIV align=center>
+	<P><FONT size="2" face="Arial,Helvetica">&copy; <A href="mailto:pol@french-touch.net">Pierre-Olivier Latour</A> 2000 - All rights reserved<BR>
+			This web site is not affiliated with French Touch in any way.</FONT></P>
+</DIV>
+<DIV align=right>
+						<P><FONT size=1 face=Arial,Helvetica color=#969696>Page generated 7/11/2002 12:08</FONT></P>
+					</DIV>
+				</TD></TR>
+		</TABLE>
+	</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+.module div div div, .module_menu div div div, .module_text div div div {
+	display: inline-block;
+}
+
+.user1_klein {
+	width: 48.94%;
+	float: left;
+	margin-right: 1%;
+}
+
+.user2_klein {
+	width: 48.94%;
+	float: right;
+	margin-left: 1%;
+}
+
+.user3 {
+	background: none;
+}

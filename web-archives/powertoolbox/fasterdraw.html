@@ -1,0 +1,312 @@
+<HTML><HEAD>
+<TITLE>FasterDraw 2D Engine</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#009999" ALINK="#FFFF00" VLINK="#005555">
+<table width=580 border=1 cellpadding=4 cellspacing=0 valign="top" align="left">
+<tr><td valign="left" align="left">
+<FONT COLOR="#FFFFFF">
+
+<IMG ALIGN=Left SRC="images/ptb.gif" WIDTH="150" HEIGHT="90" BORDER="1">
+<IMG ALIGN=Right SRC="images/fasterdraw.gif" WIDTH="230" HEIGHT="90">
+<BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Description:</H2></FONT>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>What is FasterDraw:</H4></FONT></CENTER>
+FasterDraw is a basic 2D engine for PowerMacs especially made for handling offscreen to screen copying operations i.e. when copying the final image from the offscreen to the screen. Actually Apple's drawing architecture - QuickDraw - only provides good performances when copying at the same size. If you need to scale from 320x240 to 640x480 when copying from the offscreen to the screen, QuickDraw get really slow...<BR>
+FasterDraw offers to developers a way to bypass QuickDraw to do theses operations and this result in a great speed increase especially in 8 Bits depth. And furthermore, FasterDraw provides native routine to copy in SVGA mode (1x1 pixels to 1x1 pixels), in VGA mode (1x1 pixels to 2x2 pixels) and in interlaced mode (1x1 pixels to 2x1 pixels).<BR>
+FasterDraw also provides routines to create fast offscreens buffers and to erase them really faster than QuickDraw does.<BR>
+<BR>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Main caracteristics:</H4></FONT></CENTER>
+<UL>
+<LI>Supports 8 Bits and 16 Bits depth.
+<LI>8 copy modes:
+<OL>
+<LI><B>One</B>: copy a portion of the source PixMap to the destination PixMap.
+<LI><B>OneEven</B>: same thing, but copy only even lines.
+<LI><B>OneOdd</B>: same thing, but copy only odd lines.
+<LI><B>Two</B>: copy a portion of the source PixMap to the destination PixMap but the final image is twice bigger (VGA like).
+<LI><B>Four</B>: same thing but four times bigger.
+<LI><B>Interlaced</B>: same as One but image is twice higher and one line out of two in the final image is leaved empty.
+<LI><B>ExtendedInterlaced</B>: same as Two but one line out of two in the final image is leaved empty (interlaced like).
+<LI><B>Transparent</B>: copy a portion of the source PixMap to a destination PixMap and the pixels are copied only when they don't match the transparent color.
+</OL>
+<LI>Fully optimized for PowerPC: FasterDraw takes advantage of all the accelerations methods available on this plateforme: cache, pipelining, PCI bus... Except the transparency routines, all the FasterDraw routines use 64 Bits wide video memory access for maximal speed.
+<LI>API includes low level and high level routines.
+<LI>Requires only few modifications in your code.
+<LI>Especially made for graphically intensive applications like games.
+</UL>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Performances:</H4></FONT></CENTER>
+The comparaison between QuickDraw and FasterDraw was made by mesuring the time for executing 512 "drawing cycles". A drawing cycle consists of three steps (theses are the typical graphic operations that occur in a game):
+<UL>
+<LI>erasing the offscreen GWorld #2.
+<LI>copying the offscreen GWorld #1 content to the offscreen #2.
+<LI><I>(you would insert there your drawing operations on the offscreen #2).</I>
+<LI>copying the offscreen GWorld #2 content to the screen.
+</UL>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr><B>Results on a Apple PowerBook 3400c/180 with 16Mb of Ram:</B></tr>
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Bitdepth:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Source size (pixels):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Copy mode:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>QuickDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>FasterDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Acceleration (percent):</B></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">2942</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">2660</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>10</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">95565</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">7140</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>1238</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Interlaced</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">N/A</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">3375</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>N/A</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">14445</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">14028</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>3</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">6410</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">5943</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>8</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">24651</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">19795</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>24</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Interlaced</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">N/A</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">8002</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>N/A</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">28795</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">28385</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>1</B></FONT></td>
+</tr>
+</TABLE>
+<BR>
+
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr><B>Results on a Motorola StarMax 3000/180 with 16Mb of Ram:</B></tr>
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Bitdepth:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Source size (pixels):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Copy mode:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>QuickDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>FasterDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Acceleration (percent):</B></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">3438</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">3167</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>8</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">98708</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8254</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>1096</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Interlaced</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">N/A</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">4777</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>N/A</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">12168</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">11725</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>4</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">6660</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">6375</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>4</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">31460</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">15984</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>97</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Interlaced</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">N/A</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">8200</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>N/A</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">30981</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">30479</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>2</B></FONT></td>
+</tr>
+</TABLE>
+
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr><B>Results on a Workgroup Server 9150/80 upgraded with Sonnet's G3/240/160/1MB PDS card:</B></tr>
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Bitdepth:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Source size (pixels):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Copy mode:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>QuickDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>FasterDraw time (ms):</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Acceleration (percent):</B></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">92222</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">27226</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>239</B></FONT></td>
+</tr>
+<tr>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">8</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">28888</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF">28572</FONT></td>
+<td bgcolor="#333333" valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>1</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">320x240</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Double</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">60084</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">54445</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>10</B></FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">640x480</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">Same size</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">63296</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">62147</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF"><B>2</B></FONT></td>
+</tr>
+</TABLE>
+<BR>
+As you can see, the results depends on the configuration. That's why you should evaluate FasterDraw on your own configuration with the "FasterDraw Demo" application included in the dev. kit.<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>System requirements:</H2></FONT>
+<UL>
+<LI>PowerPC processor MacOS system.
+<LI>System 7.1 or later.
+</UL>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Downloading the Dev. Kit:</H2></FONT>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Content:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Version:</B></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">
+<BR><DL>
+<LI>FasterDraw libraries & C/C++ headers.
+<LI>Source code.
+<LI>FasterDraw Demo (application to evaluate the performances of FasterDraw) with source code.
+<LI>Read-me & License.
+</DL>
+</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">1.0</FONT></td>
+</tr>
+</TABLE>
+<BR>
+<CENTER><A HREF="download.html">Download</A> FasterDraw Dev. Kit now.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>FasterDraw FAQ:</H2></FONT>
+<UL>
+<LI><B>Is there any limitations with FasterDraw?</B><BR>Actually, there is only one: since FasterDraw was designed for blittering only, you have to copy the images to an address which is a multiple of 4 i.e. in the horizontal coordinate of the destination top left point must be a multiple of 4.<BR>
+If you want to copy images to any arbitrary address, check out <A HREF="spritedraw.html">SpriteDraw</A>.
+<LI><B>Can I see an example of use of FasterDraw?</B><BR>There is a test application in the dev. kit, so that you can get immediately an idea of the acceleration procured by FasterDraw. You may also check out the <A HREF="download.html">D-Fusion Demo</A>, which uses many other PowerToolBox development kits (it uses FasterDraw for buffering and writing to the screen in interlaced mode).
+<LI><B>Go <A HREF="faq_credits.html">there</A> for the general PowerToolBox FAQ.</B>
+</UL>
+<CENTER>The Read-me file enclosed in the dev. kit contains much more information.<BR>Please read it before writting to the author.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<HR WIDTH=75% ALIGN=Center>
+<BR>
+<P ALIGN=CENTER>
+[ <A HREF="index.html">Home</A> | <A HREF="fasterdraw.html">FasterDraw</A> | <A HREF="spritedraw.html">SpriteDraw</A> | <A HREF="blast.html">3D Blast</A> | <A HREF="fastertime.html">FasterTime</A> | <A HREF="transformation.html">2D Transformations</A> | <A HREF="utilities.html">Utilities</A> | <A HREF="faq_credits.html">FAQ & Credits</A> | <A HREF="license.html">License</A> ]
+</P>
+
+</FONT>
+</td></tr></TABLE>
+</BODY>
+</HTML>

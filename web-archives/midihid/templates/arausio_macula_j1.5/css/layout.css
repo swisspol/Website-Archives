@@ -1,0 +1,247 @@
+body {
+	margin: 0;
+	background: #eee url(../images/hg.gif);
+	color: #939393;
+	font-size: 12px;
+	font-family: Verdana, Tahoma, Times New Roman;
+}
+
+a:link, a:visited {
+	color: #f58a49;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+a:hover {
+	color: #f8ab7c;
+	text-decoration: underline;
+}
+
+img {
+	background: #FAFAFA;
+	border: 1px solid #DCDCDC;
+	padding: 5px;
+}
+
+table.blog {
+	width: 100%;
+}
+
+#kopf_aussen {
+	position: fixed;
+	width: 100%;
+	height: 134px;
+	min-width: 900px;
+	max-width: 1500px;
+}
+
+#kopf_schatten {
+	height: 9px;
+	background: url(../images/kopfschatten.png) repeat-x top left;
+}
+
+#kopf_innen {
+	height: 105px;
+	padding: 0 6%;
+	/* background: #E65904; */
+	background: #FF6600;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+#logo {
+	width: 65%;
+	float: left;
+	height: 105px;
+	background: url(../images/kopf.png) no-repeat;
+}
+
+#logo_voll {
+	width: 100%;
+	float: none;
+	height: 105px;
+	background: url(../images/kopf.png) no-repeat;
+}
+
+.user4 {
+	width: 35%;
+	float: left;
+	height: 85px;
+	padding: 10px 0;
+}
+
+.clr {
+	clear: both;
+}
+
+#mitte {
+	text-align: center;
+	min-width: 900px;
+	max-width: 1500px;
+}
+
+#inhalt_aussen {
+	padding: 145px 0 0 0;
+	text-align: left;
+	width: 90%;
+	margin: 0 auto;
+	border-left: 5px solid #ddd;
+	border-right: 5px solid #ddd;
+	background: #fff;
+}
+
+#inhalt_innen {
+	padding: 0 1%;
+}
+
+#links {
+	width: 19%;
+	float: left;
+	margin-right: 1%;
+}
+
+#inhalt_klein {
+	width: 60%;
+	float: left;
+	margin:0 0 15px 0;
+	text-align: justify;
+}
+
+#inhalt_gross {
+	width: 80%;
+	float: left;
+	margin:0 0 15px 0;
+	text-align: justify;
+}
+
+#inhalt_voll {
+	width: 100%;
+	float: none;
+	margin:0 0 15px 0;
+	text-align: justify;
+}
+
+#rechts {
+	width: 19%;
+	float: left;
+	margin-left: 1%;
+}
+
+#user {
+	padding: 0 0 15px 0;
+}
+
+#user .module {
+	margin: 0;
+}
+
+#user div.module div {
+	margin: 0;
+}
+
+.user1_klein {
+	width: 49%;
+	float: left;
+	margin: 0 1% 0 0;
+}
+
+.user1_voll {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+
+.user2_klein {
+	width: 49%;
+	float: left;
+	margin: 0 0 0 1%;
+}
+
+.user2_voll {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+
+#user3  {
+	height: 20px;
+	padding: 0 6%;
+	/* background: #E65904; */
+	background: #FF6600;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+.user5_klein {
+	width: 49.5%;
+	float: left;
+	margin: 0 0.5% 0 0;
+}
+
+.user5_voll {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+
+.user6_klein {
+	width: 49.5%;
+	float: left;
+	margin: 0 0 0 0.5%;
+}
+
+.user6_voll {
+	width: 100%;
+	float: none;
+	margin: 0;
+}
+
+#fuss {
+	font-weight: bold;
+	color: #ccc;
+	width: 90%;
+	margin: 0 auto;
+	border: 5px solid #ddd;
+	background: #fff;
+	padding: 10px 0;
+	text-align: center;
+}
+
+#inhalt_klein a[href^="http:"], #inhalt_gross a[href^="http:"], #inhalt_voll a[href^="http:"], #inhalt_voll a[href^="http:"] {
+	background: url(../images/ext_link.gif) right no-repeat;
+	text-decoration: none;
+	border-bottom: 1px dashed #f58a49;
+	padding-right: 15px;
+	margin-right: 3px;
+}
+
+#inhalt_klein a[href^="http:"]:hover, #inhalt_gross a[href^="http:"]:hover, #inhalt_voll a[href^="http:"]:hover {
+	background: url(../images/ext_link_hover.gif) right no-repeat;
+	border-bottom: 1px dashed #f8ab7c;
+}
+
+#smoothtop {
+	width: auto;
+	text-align: right;
+	padding-bottom: 10px;
+}
+
+#smoothtop a {
+	color: #fff;
+	border: 0 none;
+	padding: 1px 3px;
+	/* background: #E65904; */
+	background: #FF6600;
+	-moz-border-radius: 3px;
+}
+
+#inhalt_klein2 a[href^="http:\/\/www.midihid.com/images/stories/"], #inhalt_gross a[href^="http:\/\/www.midihid.com/images/stories/"], #inhalt_voll a[href^="http:\/\/www.midihid.com/images/stories/"], #inhalt_voll a[href^="http:\/\/www.midihid.com/images/stories/"] {
+	background: none;
+	border-bottom: 0;
+}
+
+#inhalt_klein2 a[href^="http:\/\/www.midihid.com/images/stories/"]:hover, #inhalt_gross a[href^="http:\/\/www.midihid.com/images/stories/"]:hover, #inhalt_voll a[href^="http:\/\/www.midihid.com/images/stories/"]:hover {
+	background: none;
+	border-bottom: 0;
+}

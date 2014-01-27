@@ -1,0 +1,98 @@
+<HTML><HEAD>
+<TITLE>SpriteDraw 2D Sprite Engine</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#009999" ALINK="#FFFF00" VLINK="#005555">
+<table width=580 border=1 cellpadding=4 cellspacing=0 valign="top" align="left">
+<tr><td valign="left" align="left">
+<FONT COLOR="#FFFFFF">
+
+<IMG ALIGN=Left SRC="images/ptb.gif" WIDTH="150" HEIGHT="90" BORDER="1">
+<IMG ALIGN=Right SRC="images/spritedraw.gif" WIDTH="220" HEIGHT="90">
+<BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Description:</H2></FONT>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>What is SpriteDraw:</H4></FONT></CENTER>
+SpriteDraw is a powerfull 2D engine based on <A HREF="fasterdraw.html">FasterDraw</A>. It was especially designed for PowerMacs and provide features not available in Quickdraw like aliased sprites.<BR>
+<BR>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Main caracteristics:</H4></FONT></CENTER>
+<UL>
+<LI>16 Bits depth only.
+<LI>can plot a sprite at any position  of a pixmap.
+<LI>3 sprite copying modes (note: you may use different modes at the same time):
+<OL>
+<LI><B>Plain</B>: copy the sprite to the destination pixmap overwriting the destination pixmap.
+<LI><B>Mask</B>: a color is defined as transparent and a 1-Bit mask is attached to each sprite. When copying the sprite to the destination pixmap, only masked portions of the image are copied.
+<LI><B>Alpha</B>: an 8-Bits alpha layer is attached to each sprite. When copying the sprite to the destination pixmap, the sprite image is merged with its content according to the alpha layer. This results in aliasing.
+</OL>
+<LI>Fully optimized for PowerPC: SpriteDraw takes advantage of all the accelerations methods available on this plateforme: cache, pipelining, PCI bus...
+<LI>Especially made for games.
+</UL>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Performances:</H4></FONT></CENTER>
+I hadn't time to benchmark SpriteDraw (maybe in a further update). All I can tell you is that it's pretty fast!
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>System requirements:</H2></FONT>
+<UL>
+<LI>PowerPC processor MacOS system.
+<LI>System 7.1 or later.
+</UL>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Downloading the Dev. Kit:</H2></FONT>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Content:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Version:</B></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">
+<BR><DL>
+<LI>Source code  & C/C++ headers.
+<LI>SpriteDraw Demo (application to evaluate the performances of SpriteDraw) with source code.
+<LI>Read-me & License.
+</DL>
+</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">1.0</FONT></td>
+</tr>
+</TABLE>
+<BR>
+<CENTER><A HREF="download.html">Download</A> SpriteDraw Dev. Kit now.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>FasterDraw FAQ:</H2></FONT>
+<UL>
+<LI><B>Is there any limitations with SpriteDraw?</B><BR>Sprite runs only with 16 Bits graphics. But its architecture was designed to work with 8/16/24/32 bitdepth, so you shouldn't have to much work adding support for other depths.
+<LI><B>Can I see an example of use of SpriteDraw?</B><BR>There is a demo application in the dev. kit, so that you can get immediately an idea of the quality and speed of SpriteDraw.
+<LI><B>Go <A HREF="faq_credits.html">there</A> for the general PowerToolBox FAQ.</B>
+</UL>
+<CENTER>The Read-me file enclosed in the dev. kit contains much more information.<BR>Please read it before writting to the author.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<HR WIDTH=75% ALIGN=Center>
+<BR>
+<P ALIGN=CENTER>
+[ <A HREF="index.html">Home</A> | <A HREF="fasterdraw.html">FasterDraw</A> | <A HREF="spritedraw.html">SpriteDraw</A> | <A HREF="blast.html">3D Blast</A> | <A HREF="fastertime.html">FasterTime</A> | <A HREF="transformation.html">2D Transformations</A> | <A HREF="utilities.html">Utilities</A> | <A HREF="faq_credits.html">FAQ & Credits</A> | <A HREF="license.html">License</A> ]
+</P>
+
+</FONT>
+</td></tr></TABLE>
+</BODY>
+</HTML>

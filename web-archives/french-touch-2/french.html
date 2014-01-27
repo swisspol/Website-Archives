@@ -1,0 +1,172 @@
+<HTML>
+
+	<HEAD>
+		<META http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<TITLE>French Touch Team</TITLE>
+		<META name="generator" content="Adobe GoLive 4">
+		<SCRIPT language="JavaScript" src="navbarre.js"></SCRIPT>
+		<CSACTIONS>
+			<CSACTION name="B14910440" class="Open Window" val0="profiles/pol.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B149131E1" class="Open Window" val0="profiles/david.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B149133F2" class="Open Window" val0="profiles/didier.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B14913743" class="Open Window" val0="profiles/yann.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B14913974" class="Open Window" val0="profiles/eric.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B14913980" class="Open Window" val0="profiles/ssb.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B44A23BD0" class="Open Window" val0="profiles/marc.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+			<CSACTION name="B44A23BD1" class="Open Window" val0="profiles/peter.html" val1="_blank" val2="400" val3="400" val4="false" val5="false" val6="false" val7="false" val8="false" val9="false" val10="false" type>
+		</CSACTIONS>
+		<CSSCRIPTDICT>
+			<SCRIPT><!--
+function CSClickReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return true; // dont follow link
+	else return false; // dont follow link
+}
+CSStopExecution = false;
+
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+function CSOpenWindow(action) {
+	var wf = "";	
+	wf = wf + "width=" + action[3];
+	wf = wf + ",height=" + action[4];
+	wf = wf + ",resizable=" + (action[5] ? "yes" : "no");
+	wf = wf + ",scrollbars=" + (action[6] ? "yes" : "no");
+	wf = wf + ",menubar=" + (action[7] ? "yes" : "no");
+	wf = wf + ",toolbar=" + (action[8] ? "yes" : "no");
+	wf = wf + ",directories=" + (action[9] ? "yes" : "no");
+	wf = wf + ",location=" + (action[10] ? "yes" : "no");
+	wf = wf + ",status=" + (action[11] ? "yes" : "no");		
+	window.open(action[1],action[2],wf);
+}
+// --></SCRIPT>
+		</CSSCRIPTDICT>
+		<CSACTIONDICT>
+		<SCRIPT><!--
+CSAct[/*CMP*/ 'B14910440'] = new Array(CSOpenWindow,/*URL*/ 'profiles/pol.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B149131E1'] = new Array(CSOpenWindow,/*URL*/ 'profiles/david.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B149133F2'] = new Array(CSOpenWindow,/*URL*/ 'profiles/didier.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B14913743'] = new Array(CSOpenWindow,/*URL*/ 'profiles/yann.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B14913974'] = new Array(CSOpenWindow,/*URL*/ 'profiles/eric.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B14913980'] = new Array(CSOpenWindow,/*URL*/ 'profiles/ssb.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B44A23BD0'] = new Array(CSOpenWindow,/*URL*/ 'profiles/marc.html','_blank',400,400,false,false,false,false,false,false,false);
+CSAct[/*CMP*/ 'B44A23BD1'] = new Array(CSOpenWindow,/*URL*/ 'profiles/peter.html','_blank',400,400,false,false,false,false,false,false,false);
+
+// --></SCRIPT>
+		</CSACTIONDICT>
+	</HEAD>
+
+	<BODY bgcolor="black" link="lime" alink="#ffff0a" vlink="white" text="white" background="fcran2.gif">
+		<TABLE width="648" height="200" border="0" cellspacing="0" cellpadding="0">
+			<TR>
+				<TD rowspan="2" colspan="2" valign="top"><A href="products.html" target="_top" onmouseover="display(1);self.status = 'products'; return true " onmouseout="display(0)"><IMG src="boutons/btproa.gif" align="TOP" border="0" width="121" height="35"></A><A href="support.html" target="_top" onmouseover="display(3);self.status = 'support'; return true " onmouseout="display(2)"><IMG src="boutons/btsupa.gif" align="TOP" border="0" width="101" height="35"></A><A href="press.html" target="_top" onmouseover="display(5);self.status = 'developer'; return true " onmouseout="display(4)"><IMG src="boutons/btdeva.gif" align="TOP" border="0" width="100" height="35"></A><A href="testing.html" target="_top" onmouseover="display(7);self.status = 'beta testing'; return true " onmouseout="display(6)"><IMG src="boutons/bttesta.gif" align="TOP" border="0" width="100" height="35"></A><A href="mapmakers.html" target="_top" onmouseover="display(9);self.status = 'map makers'; return true " onmouseout="display(8)"><IMG src="boutons/btmapa.gif" align="TOP" border="0" width="100" height="35"></A><A href="french.html" target="_top" onmouseover="display(13);self.status = 'frenchtouch'; return true " onmouseout="display(12)"><IMG src="boutons/btfta.gif" align="TOP" border="0" width="65" height="35"></A><IMG src="graph/toisea.gif" align="TOP" width="46" height="35"><BR>
+					<IMG src="graph/toised.gif" align="TOP" width="75" height="27" "3"><IMG src="boutons/ph.gif" align="TOP" width="308" height="27" "3"><A href="news.html" target="_top" onmouseover="display(11);self.status = 'news'; return true " onmouseout="display(10)"><IMG src="boutons/btnewa.gif" align="TOP" border="0" width="139" height="27"></A><A href="french.html" target="_top" onmouseover="display(15);self.status = 'frenchtouch'; return true " onmouseout="display(14)"><IMG src="boutons/btftb.gif" align="TOP" border="0" width="65" height="27"></A><IMG src="graph/toiseb.gif" align="TOP" width="37" height="27"><BR>
+					<IMG src="graph/toizee.gif" align="TOP" width="75" height="50" "3"><IMG src="graph/toisef.gif" align="TOP" width="308" height="1" "3"><A href="mailto:info@french-touch.net"><IMG src="boutons/btinfo.gif" align="TOP" border="0" width="90" height="28"></A><IMG src="graph/toizeg.gif" align="TOP" width="49" height="28"><IMG src="boutons/btftc.gif" align="TOP" width="65" height="28" "3"><IMG src="graph/toisec.gif" align="TOP" width="23" height="28" "3"><BR>
+					<IMG src="graph/ttrfrench.gif" align="TOP" width="522" height="22" "3"><BR>
+					<IMG src="graph/toisei.gif" align="TOP" width="48" height="21" "3"></TD>
+			</TR>
+			<TR></TR>
+		</TABLE>
+		<TABLE width="648" height="246" border="0" cellspacing="0" cellpadding="0">
+			<TR>
+				<TD width="22%">&nbsp;</TD>
+				<TD width="78%"><FONT color="#2e735c" size="5">Description :</FONT>
+					<HR>
+					<P>French Touch is a group of 5 French people (one programmer and 4 graphic designers) and a Spanish musician, who wish to create a new generation of high quality games for the Power Macintosh.<BR>
+					One important thing to know about French Touch people is the fact that they are all working on the different projects only in their free time!</P>
+					<P>Why develop games on the Mac and not on the PC ? Curiously, there's a lack of 3D games on the Mac, but the hardware is there : there is about 2 millions iMacs and many G3 out there with outbreaking performances and 3D chips onboard... this represents many Macs to sell games for.</P>
+					<P>Yes, the Mac is first a creation tool, not a gaming machine (if you want to play games, go and buy a console, not a PC), but we want to prove that the Mac is also a gaming platform and owns better games: since you do better work with a Mac, you should end up with better games than on the PC side :-)</P>
+					<P>At the moment, we essentially design our software to run on the G3 PowerMacintosh line, but we'll try to make them compatible with the &quot;older&quot; ones, through software rendering and low quality settings.</P>
+					<P>&nbsp;</P>
+					<P>&nbsp;</P>
+					<P><FONT color="#2e735c" size="5">A Brief History of French Touch Software :
+					<HR>
+					</FONT></P>
+					<P>The French Touch adventure started during the 1998 summer, as Pierre-Olivier Latour began working on a Rave based 3D engine: Infinity. Soon, he decided to create an outstanding windsurfing simulation game based on this engine : WindRacer.</P>
+					<P><FONT color="lime">In October 1998,</FONT> Didier Larue saw some screenshots of Infinity on the author's web page and offered his services with David Lardat as 3D artists.<BR>
+					A few days later, Didier and David had designed a first ship and the small team extended the concept of the game to a water racing simulation not limited to windsurfing and gave it a new name : WaterRace.<BR>
+					They also started working on a deeper project: Lords of Steel, a Mech based adventure game that would occur in a feudal world.<BR>
+					At that time, it became obvious that some special tools were needed for the project. As a consequence Pierre-Olivier developed Fusion, a complete 3D editor and texturing tool.</P>
+					<P><FONT color="lime">In November 1998,</FONT> Eric Dufresne and Yann Lorgeuilleux saw the very early screenshots of the game, and offered to join the team as graphic designers and handle all the 2D work for the team, including game logos, interfaces and the web site.</P>
+					<P><FONT color="lime">In December 1998,</FONT> the French Touch team held its first meeting in Paris and defined definitely both the concept and the interface of WaterRace. They also started to imagine the background world and the script of Lords of Steel.</P>
+					<P><FONT color="lime">In late January 1999,</FONT> French Touch opened its web site and presented its projects to the Mac gaming community...</P>
+					<P><FONT color="lime">In February 1999,</FONT> Siete 7 Black, a Spanish R &amp; B musician joined the French Touch team with the idea of making the best musics for our upcoming games, with a special touch of course!</P>
+					<P><FONT color="lime">In November 1999,</FONT> Marc Gohring and Peter Goedtkindt joined the French Touch team as 3D animator and additional programmer.</P>
+					<P>&nbsp;</P>
+					<P>&nbsp;</P>
+					<P><FONT color="#2e735c" size="5">Team Member Profile :
+					<HR>
+					</FONT></P>
+					<P><FONT color="#ff0004">Please use the e-mail addresses of the people of the team only for strictly personal messages.<BR>
+					General purpose messages should be sent to </FONT><A href="mailto:info@french-touch.net">info@french-touch.net</A><FONT color="#ff0004">.</FONT></P>
+					<P><A href="profiles/pol.html" target="_blank" csclick="B14910440" onclick="CSAction(new Array(/*CMP*/'B14910440'));return CSClickReturn();"><B>Manager and lead programmer</B></A> : Pierre-Olivier Latour</P>
+					<P><A href="profiles/david.html" target="_blank" csclick="B149131E1" onclick="CSAction(new Array(/*CMP*/'B149131E1'));return CSClickReturn();"><B>Illustrations and texturing</B></A> : David Lardat</P>
+					<P><A href="profiles/didier.html" target="_blank" csclick="B149133F2" onclick="CSAction(new Array(/*CMP*/'B149133F2'));return CSClickReturn();"><B>3D artist</B></A> : Didier Larue</P>
+					<P><A href="profiles/yann.html" target="_blank" csclick="B14913743" onclick="CSAction(new Array(/*CMP*/'B14913743'));return CSClickReturn();"><B>Graphic and Web designer</B></A> : Yann Lorgueilleux</P>
+					<P><A href="profiles/eric.html" target="_blank" csclick="B14913974" onclick="CSAction(new Array(/*CMP*/'B14913974'));return CSClickReturn();"><B>Graphic and Web designer</B></A> : Eric Dufresne</P>
+					<P><A href="profiles/ssb.html" target="_blank" csclick="B14913980" onclick="CSAction(new Array(/*CMP*/'B14913980'));return CSClickReturn();"><B>Music and Sfx artist</B></A> : Siete 7 Black</P>
+					<P><A href="profiles/marc.html" target="_blank" csclick="B44A23BD0" onclick="CSAction(new Array(/*CMP*/'B44A23BD0'));return CSClickReturn();"><B>3D animator</B></A> : Marc Gohring</P>
+					<P><A href="profiles/peter.html" target="_blank" csclick="B44A23BD1" onclick="CSAction(new Array(/*CMP*/'B44A23BD1'));return CSClickReturn();"><B>Additional programmer</B></A> : Peter Goedtkindt</P>
+					<CENTER>
+						<P><IMG height="283" width="393" src="graph/team.gif" border="0" alt="the french touch team"><BR>
+						<I>Part of the French Touch Team live in Bordeaux</I></P>
+					</CENTER>
+					<P>&nbsp;</P>
+					<P>&nbsp;</P>
+					<P><FONT color="#2e735c" size="5">Thanks to :
+					<HR>
+					</FONT></P>
+					<P>These are the people who help us develop our products<BR>
+					and therefore we'd like to thank :</P>
+					<P>Chris Bentley (ATI)</P>
+					<P>Stephen Luce (QuickDraw 3D engineer)</P>
+					<P>Brian Greenstone</P>
+					<P>Phillipe Lattard</P>
+					<P>George Warner (Apple DTS)</P>
+					<P>People of the Mac game dev. list</P>
+					<P>IMPEC company which lent us its offices and PowerMacs</P>
+					<P>Robin who let us use his Yosemite</P>
+					<P>Jeff Gibboney and other testers for editing Fusion's users manual</P>
+					<P>Etienne Despr&eacute;s for designing the cool icons of the inspector window</P>
+					<P>Fuji</P>
+					<P>Phillips<FONT size="2">&copy;</FONT> coffee maker</TD>
+			</TR>
+		</TABLE>
+		<CENTER>
+			<P>
+			<HR>
+			</P>
+			<P>[<A href="news.html">News</A> | <A href="products.html">Products</A> | <A href="support.html">Support</A> | <A href="press.html">Press</A> | <A href="testing.html">Beta-testing</A> | <A href="mapmakers.html">Map Makers</A> | <A href="french.html">Inside French Touch</A>]</CENTER>
+	</BODY>
+
+</HTML>

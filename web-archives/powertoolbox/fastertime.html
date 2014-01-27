@@ -1,0 +1,109 @@
+<HTML><HEAD>
+<TITLE>FasterTime Movie Engine</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#009999" ALINK="#FFFF00" VLINK="#005555">
+<table width=580 border=1 cellpadding=4 cellspacing=0 valign="top" align="left">
+<tr><td valign="left" align="left">
+<FONT COLOR="#FFFFFF">
+
+<IMG ALIGN=Left SRC="images/ptb.gif" WIDTH="150" HEIGHT="90" BORDER="1">
+<IMG ALIGN=Right SRC="images/fastertime.gif" WIDTH="270" HEIGHT="90">
+<BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Description:</H2></FONT>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>What is FasterTime:</H4></FONT></CENTER>
+FasterTime is a QuickTime<SUP><SMALL>TM</SMALL></SUP> based movie format which has the following advantages over QuickTime<SUP><SMALL>TM</SMALL></SUP>:
+<UL>
+<LI>real full screen video, thanks to custom accelerated routines for copying on the the screen (note that FasterTime uses <A HREF="fasterdraw.html">FasterDraw 2D Engine</A> for maximal performances): display modes include "Same size": 1x1 pixels, "Double": 2x2 pixels (VGA like), "Double interlaced": 2x1 pixels (interlaced video). All theses routines are a lot faster than the ones that QuickTime<SUP><SMALL>TM</SMALL></SUP> or QuickDraw use (and QuickTime<SUP><SMALL>TM</SMALL></SUP> doesn't even provide an interlaced option).
+<LI>private format: nobody can hack your movies.
+<LI>easy to use API: only three routines to play a movie in your program: Init, Play and Close.
+<LI>FasterTime was specially made for developers who need to include some video in their programs (e.g. game cutscenes), but require full screen video and don't want to spend time learning QuickTime<SUP><SMALL>TM</SMALL></SUP>.
+</UL>
+<IMG ALIGN=Right SRC="images/ft_editor.gif" WIDTH="140" HEIGHT="101" BORDER="1">
+And more:
+<UL>
+<LI>all QuickTime<SUP><SMALL>TM</SMALL></SUP> video compression formats are supported.
+<LI>high-quality audio: major compression formats supported (IMA, &#181;Law, MACE...).
+<LI>easy conversion from QuickTime<SUP><SMALL>TM</SMALL></SUP> to FasterTime with the three-steps "FasterTime Editor" application.
+</UL>
+<BR>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Format of a FasterTime movie:</H4></FONT></CENTER>
+A FasterTime movie is made of three tracks (note that the current locations of the tracks may change in the future):
+<UL>
+<LI>the info track stored in the resource fork contains the information related the location and the format of the others tracks, but also the display settings for the movie and the copyright.
+<LI>the video track stored in the resource fork contains the video data.
+<LI>the audio track stored in the data fork contains the audio data.
+</UL>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>The QuickTime<SUP><SMALL>TM</SMALL></SUP> to FasterTime conversion process:</H4></FONT></CENTER>
+When converting a QuickTime<SUP><SMALL>TM</SMALL></SUP> movie into a FasterTime movie with "FasterTime Editor", FasterTime first extracts the audio track of the movie and copy it into the datafork of the FasterTime movie. Then it converts the video track data and stores it into the resources fork of the FasterTime movie.<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>System requirements:</H2></FONT>
+<UL>
+<LI>PowerPC processor MacOS system.
+<LI>System 7.1 or later.
+<LI>QuickTime<SUP><SMALL>TM</SMALL></SUP>.
+</UL>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Downloading the Dev. Kit:</H2></FONT>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Content:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Version:</B></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">
+<BR><DL>
+<LI>FasterTime libraries & C/C++ headers.
+<LI>Source code.
+<LI>FasterTime Editor 1.0 (the tool to build movies) with source code.
+<LI>FasterTime Player (a demo application to play movies) with source code.
+<LI>FT Templates.rsrc (the ResEdit templates to edit FasterTime movie's resources).
+<LI>Read-me & License.</DL>
+</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">1.0</FONT></td>
+</tr>
+</TABLE>
+<BR>
+<CENTER><A HREF="download.html">Download</A> FasterTime Dev. Kit now.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>FasterTime FAQ:</H2></FONT>
+<UL>
+<LI><B>Is there any limitations with FasterTime?</B><BR>Currently there are four: FasterTime seems to be incompatible with QDesign audio codec; your movies must be in 8, 16 or 24 Bits depth (if your movie is in 24 Bits depth, it will still be displayed in 16 Bits on the screen); FasterTime doesn't support neither 256 grays movies nor custom palettes for 8 Bits movies; and the video track of your movie must be small enough to fit in the memory partition of your application.
+<LI><B>Can I see an example of use of FasterTime?</B><BR>Unfortunately, no. Since movie files are quite big, putting one on the site would have required too much downloading time. But with the FasterTime dev. kit, you can easily build a FasterTime movie from one of your QuickTime<SUP><SMALL>TM</SMALL></SUP> movies and then try it to see how it looks.
+<LI><B>How about the size of FasterTime movies?</B><BR>They are the same as their QuickTime<SUP><SMALL>TM</SMALL></SUP> counterparts - they are even a little smaller.
+<LI><B>Go <A HREF="faq_credits.html">there</A> for the general PowerToolBox FAQ.</B>
+</UL>
+<CENTER>The Read-me file enclosed in the dev. kit contains more information.<BR>Please read it before writting to the author.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<HR WIDTH=75% ALIGN=Center>
+<BR>
+<P ALIGN=CENTER>
+[ <A HREF="index.html">Home</A> | <A HREF="fasterdraw.html">FasterDraw</A> | <A HREF="spritedraw.html">SpriteDraw</A> | <A HREF="blast.html">3D Blast</A> | <A HREF="fastertime.html">FasterTime</A> | <A HREF="transformation.html">2D Transformations</A> | <A HREF="utilities.html">Utilities</A> | <A HREF="faq_credits.html">FAQ & Credits</A> | <A HREF="license.html">License</A> ]
+</P>
+
+</FONT>
+</td></tr></TABLE>
+</BODY>
+</HTML>

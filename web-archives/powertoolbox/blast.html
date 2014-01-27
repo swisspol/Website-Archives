@@ -1,0 +1,125 @@
+<HTML><HEAD>
+<TITLE>3D Blast Engine</TITLE>
+</HEAD>
+<BODY BGCOLOR="#000000" LINK="#00AAAA" ALINK="#FFFF00" VLINK="#005555">
+<table width=580 border=1 cellpadding=4 cellspacing=0 valign="top" align="left">
+<tr><td valign="left" align="left">
+<FONT COLOR="#FFFFFF">
+
+<IMG ALIGN=Left SRC="images/ptb.gif" WIDTH="150" HEIGHT="90" BORDER="1">
+<IMG ALIGN=Right SRC="images/blast.gif" WIDTH="170" HEIGHT="90">
+<BR><BR><BR><BR><BR>
+<BR><BR><BR><BR><BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Description:</H2></FONT>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>What is 3D Blast:</H4></FONT></CENTER>
+3D Blast is a simple 3D engine. It is <B>not</B> finished yet (it's about 70% complete) and it'll probably never be. But it still contains many useful informations for a developer who wishes to build his own 3D engine.<BR>
+<BR>
+<IMG SRC="images/blast_1.jpg" WIDTH="160" HEIGHT="120" HSPACE="80" BORDER="1">
+<IMG SRC="images/blast_2.jpg" WIDTH="160" HEIGHT="120" BORDER="1">
+<BR>
+<BR>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Features:</H4></FONT></CENTER>
+Theses are the current caracteristics of 3D Blast engine:
+<UL>
+<LI>256 colors rendering.
+<LI>any rendering size up to 4000x4000.
+<LI>photographic or orthographic projection.
+<LI>Rendering modes include: Points, WireFrame, Ambient, FlatShadedLocal, FlatShadedReal, <FONT COLOR="#0000FF">GouraudShaded</FONT> and Textured.
+<LI><FONT COLOR="#0000FF">Classic Painter's algorithm</FONT> or Z-Buffer algorithm for faces sorting.
+<LI>Up to 65000 faces per object.
+<LI>DXF import routines.
+<LI>Pict to texture import routines.
+<LI>Routines to save and load objects in resources.
+</UL>
+<I><FONT COLOR="#0000FF">Feature not implemented.</FONT></I><BR>
+<BR>
+
+<CENTER><FONT COLOR="#00BBFF"><H4>Performances:</H4></FONT></CENTER>
+Theses are the performanes you get with the 3D Blast demo application on a PowerBook 3400c/180 with 16Mb of Ram. 3D Blast context is set to: full-screen 640x480, Photographic projection, CrossProd hidden faces remove, no face sorting. The object manipulated contains 1408 polygons and was spinning on the z-axis (note that you won't likely have so many polygons on the screen).<BR>
+<BR>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Rendering mode:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>FPS:</B></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">WireFrame</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">20.45</FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">Real flat shaded</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">18.30</FONT></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">Textured</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">16.93</FONT></td>
+</tr>
+</TABLE>
+<BR>
+<CENTER>Note that the demo application uses <A HREF="fasterdraw.html">FasterDraw 2D Engine</A> for maximal performances.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>System requirements:</H2></FONT>
+<UL>
+<LI>PowerPC processor MacOS system.
+<LI>System 7.1 or later.
+</UL>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>Downloading the Dev. Kit:</H2></FONT>
+<table width=520 border=1 cellpadding=4 cellspacing=0 valign="top" align="center">
+<tr>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Content:</B></td>
+<td bgcolor="#EEEEEE" valign="middle" align="middle"><B>Version:</B></td>
+</tr>
+<tr>
+<td valign="middle" align="left"><FONT COLOR="#FFFFFF">
+<BR><DL>
+<LI>Librairies & headers.
+<LI>Source code.
+<LI>3D Blast Engine demo application with source code.
+<LI>DXF Converter application with source code.
+<LI>Read-me & License.</DL>
+</FONT></td>
+<td valign="middle" align="middle"><FONT COLOR="#FFFFFF">0.9</FONT></td>
+</tr>
+</TABLE>
+<BR>
+<CENTER><A HREF="download.html">Download</A> 3D Blast Dev. Kit now.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<FONT COLOR="#FFFF00"><H2>3D Blast FAQ:</H2></FONT>
+<UL>
+<LI><B>Is there any limitations with 3D Blast?</B><BR>So far, 3D Blast does not support 3D accelerators cards.
+<LI><B>Can I see an example of use of 3D Blast Engine?</B><BR>Yes, there test application included in the preversion of the dev. kit. You can also check out the <A HREF="download.html">D-Fusion Demo</A>, which uses many other PowerToolBox development kits.
+<LI><B>Go <A HREF="faq_credits.html">there</A> for the general PowerToolBox FAQ.</B>
+</UL>
+<CENTER>The Read-me file enclosed in the dev. kit contains more information.<BR>Please read it before writting to the author.</CENTER>
+<BR>
+<BR>
+<BR>
+<BR>
+
+<HR WIDTH=75% ALIGN=Center>
+<BR>
+<P ALIGN=CENTER>
+[ <A HREF="index.html">Home</A> | <A HREF="fasterdraw.html">FasterDraw</A> | <A HREF="spritedraw.html">SpriteDraw</A> | <A HREF="blast.html">3D Blast</A> | <A HREF="fastertime.html">FasterTime</A> | <A HREF="transformation.html">2D Transformations</A> | <A HREF="utilities.html">Utilities</A> | <A HREF="faq_credits.html">FAQ & Credits</A> | <A HREF="license.html">License</A> ]
+</P>
+
+</FONT>
+</td></tr></TABLE>
+</BODY>
+</HTML>

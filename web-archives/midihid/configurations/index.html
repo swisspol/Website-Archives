@@ -1,0 +1,318 @@
+<!-- Localized -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <!--<base href="http://www.polhosting.info/midihid/configurations" />-->
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="midihid" />
+  <meta name="description" content="Web site for the MidiHID application for Mac OS X" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>MidiHID Configurations</title>
+  <link rel="stylesheet" href="../plugins/content/slimbox/slimbox.css" type="text/css" />
+  <link rel="stylesheet" href="../plugins/content/attachments.css" type="text/css" />
+  <script type="text/javascript" src="../media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="../media/system/js/caption.js"></script>
+  <script type="text/javascript" src="../plugins/content/slimbox/slimbox.js"></script>
+
+  <script language="javascript"></script>
+  <link rel="shortcut icon" href="../templates/arausio_macula_j1.5/images/favicon.ico" />
+  <link rel="stylesheet" href="../templates/system/css/system.css" type="text/css" />
+  <link rel="stylesheet" href="../templates/system/css/general.css" type="text/css" />
+  <link rel="stylesheet" href="../templates/arausio_macula_j1.5/css/layout.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../templates/arausio_macula_j1.5/css/joomla.css" type="text/css" media="screen" />
+  <!--[if lte IE 6]><link href="../templates/arausio_macula_j1.5/css/ie6.css" rel="stylesheet" type="text/css" media="screen" /><![ENDIF]-->
+  <!--[if IE 7]><link href="../templates/arausio_macula_j1.5/css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![ENDIF]-->
+  <!--[if IE]><style type="text/css"> body{behavior: url(../../templates/arausio_macula_j1.5/css/csshover.htc) }</style><![ENDIF]-->
+  <!--[if IE]><script defer type="text/javascript" src="../templates/arausio_macula_j1.5/js/pngfix.js"></script><![endif]-->
+  <script language="javascript" src="../templates/arausio_macula_j1.5/js/mootools.js"></script>
+
+  <script type="text/javascript">
+	window.addEvent('domready',function() { 
+		//smooooooth scrolling enabled
+		new SmoothScroll({ duration:500 }, window); 
+	});
+  </script>
+  
+	  
+</head>
+<body>
+	<div><a id="top" name="top"></a></div>
+	<div id="kopf_aussen">
+		<div id="kopf_innen">
+			<div id="logo_voll">
+				<!--[if lte IE 6]><img src="../templates/arausio_macula_j1.5/images/kopf.png" title="Arausio Macula"/><![ENDIF]-->
+			</div>
+						<div class="clr"></div>
+
+		</div>
+		<div id="user3">
+			<ul class="menumainlevel-nav" id="mainlevel-nav"><li class="item65"><a href="../index.html"><span>MidiHID Overview</span></a></li><li id="current" class="active item63"><a href="index.html"><span>MidiHID Configurations</span></a></li><li class="item62"><a href="../download/index.html"><span>Download Now</span></a></li><li class="item64"><a href="../buy/index.html"><span>Buy Online</span></a></li></ul>
+		</div>
+		<div id="kopf_schatten"></div>
+	</div>
+	<div id="mitte">
+		<div id="inhalt_aussen">
+			<div id="inhalt_innen">
+
+				
+				<div id="inhalt_voll">
+					<div>
+												
+												
+						<div class="clr"></div>
+						
+					</div>
+					<div>
+						<div class="componentheading">
+	MidiHID Configurations</div>
+<table class="blog" cellpadding="0" cellspacing="0">
+<tr>
+	<td valign="top">
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					What Are MidiHID Configurations?			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>MidiHID configurations describe how to translate the events sent by a given HID compatible USB device into MIDI messages.</strong><p>The configuration files are located in "~/Library/Application Support/MidiHID Configurations", and contain the following information:</p><ul><li>A unique identifier describing the target USB device</li><li>A few parameters on how the configuration should be used</li><li>A <a href="http://www.lua.org" target="_blank">Lua</a> script (more information below) that gets executed whenever an event is received from this USB device to convert it into a MIDI message</li></ul>You should have no reason to manipulate or edit configuration files in this directory, as this can be done directly from the MidiHID user interface.</td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Finding and Installing New Configurations			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>To install new configurations, simply drop the corresponding files into the configuration list of the MidiHID window.</strong><p>You can find and dowload new configurations for USB devices in the <a href="../forums/index.html">Community Forums</a>.</p><p>You can also export existing configurations by selecting and dragging them from the configuration list to any location in the Finder (e.g. the Desktop).</p></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Writing Your Own Configurations			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>Creating a new configuration for a USB device is fairly straightforward and involves these steps:</strong><ol><li>Make sure the USB device is connected to your computer</li><li>Click on the (+) button at the bottom-left of the MidiHID Window to create a new blank configuration</li><li>Rename the configuration</li><li>Select the USB device it applies to</li><li>Edit the Lua script (make sure to click "Reload Script" anytime you want to test your changes)</li><li>Click "Save"</li></ol></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Getting Started With Lua			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>Lua is a very lightweight but powerful scripting language that is quite popular in the video game world.</strong><p>If you have basic knowledge of programming languages, you should be able to get started in no time. If you have no programming language knowledge however, it should still be reasonably easy for you to modify any properly documented configuration file.</p><p>MidiHID uses Lua 5.1.4 with the following core libraries available in the script environment: base, string, table and math. MidiHID provides an extra "midi" library (see below), that is used to send MIDI messages from the Lua script.</p><p>MidiHID also adds a log() function, similar to the Lua print() function, except it prints to the MidiHID log instead of the system log (i.e. the Console application). It's recommended you use this function instead of print() for debugging your scripts.</p><p>To get started with Lua, you can browse the nice tutorials available on <a href="http://lua-users.org/wiki/TutorialDirectory" target="_blank">lua-users.org</a>. Once more familiar, you can head to the reference manual for Lua 5.1 which is available on <a href="http://www.lua.org/manual/5.1/" target="_blank">lua.org</a>. </p></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					MIDI Library			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>MidiHID adds a new MIDI library to the Lua environment consisting of the following functions:</strong><br /><blockquote>midi.message(message, [data1, [data2]])<br />midi.noteon(key, [velocity])<br />midi.noteoff(key, [velocity])<br />midi.controlchange(control, value)<br />midi.pitchwheelchange(value)</blockquote>  <p>Use the midi.message() function to send a raw MIDI message. The parameters are as follow:</p><ul><li>"message" (REQUIRED): a numerical value between 0 and 15 corresponding to the MIDI message</li><li>"data1" (OPTIONAL): a numerical value between 0 and 127 representing the first data byte</li><li>"data2" (OPTIONAL): a numerical value between 0 and 127 representing the second data byte</li></ul><blockquote>-- Example usage to send a Note On for key #16 and velocity 100<br />midi.message(9, 16, 100)</blockquote><p>The midi.noteon() function is a convenience function to send a Note On MIDI message. The parameters are as follow:</p><ul><li>"key" (REQUIRED): a numerical value between 0 and 127 representing the note key</li><li>"velocity" (OPTIONAL): a numerical value between 0 and 127 representing the note velocity (if absent, 127 will be used)</li></ul><blockquote>-- Example usage to send a Note On for key #16 and velocity 100<br />midi.noteon(16, 100)</blockquote>The midi.noteoff() function is a convenience function to send a Note Off MIDI message. The parameters are as follow:<br />  <ul><li>"key" (REQUIRED): a numerical value between 0 and 127 representing the note key</li><li>"velocity" (OPTIONAL): a numerical value between 0 and 127 representing the note velocity (if absent, 127 will be used)</li></ul> <blockquote>-- Example usage to send a Note Off for key #16 and velocity 127<br />midi.noteoff(16)</blockquote>The midi.controlchange() function is a convenience function to send a Control Change MIDI message. The parameters are as follow:<br />   <ul><li>"control" (REQUIRED): a numerical value between 0 and 127 representing the control number</li><li>"value" (REQUIRED): a numerical value between 0 and 127 representing the control value </li></ul>  <blockquote>-- Example usage to send a Control Change for controler #20 and value 50<br /> midi.controlchange(20, 50)</blockquote> The midi.pitchwheelchange() function is a convenience function to send a Pitch Wheel MIDI message. The parameters are as follow:<br />   <ul><li>"value" (REQUIRED): a numerical value between 0 and 16383 representing the pitch </li></ul>  <blockquote>-- Example usage to send a Pitch Wheel with value 5000<br />midi.pitchwheelchange(5000)</blockquote></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Defining Optional Functions			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>MidiHID supports 3 optional functions in the Lua script that get called at specific times: </strong><blockquote>_connect()<br />_disconnect()<br />_event(cookie, name, value, min, max)<br /></blockquote><p>The _connect() function is called whenever the USB device is connected to the computer: you can use it to send specific MIDI messages when this happens. </p><blockquote>-- Example implementation that simply prints a message when the device is connected<br />function _connect()<br />        log("&lt;CONNECT&gt;")<br />end </blockquote><p>The _disconnect() function is called whenever the USB device is disconnected from the computer: you can also use it to send specific MIDI messages when this happens.</p><blockquote>-- Example implementation that simply prints a message when the device is disconnected<br />function _disconnect()<br />        log("&lt;DISCONNECT&gt;")<br />end </blockquote><p>The _event() function gets called whenever an event is received from the USB device, assuming it is connected. The parameters are as follow:</p><ul><li>"name": the name of the event (this will be unique per-device)</li><li>"value": the current numerical value for this event</li><li>"min": the minimum numerical value the device reports for this event</li><li>"max": the maximum numerical value the device reports for this event</li></ul>Note that this function is not called if there's already an event handler defined for this specific event (see below).<br /><blockquote>-- Example implementation that simply prints a message whenever an event is received from the device<br />function _event(name, value, min, max)<br />        log("[" .. name .. "] = " .. value .. " (" .. min .. " | " .. max .. ")")<br />end</blockquote></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Defining Event Handlers			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<strong>Having a single function _event() called for any event received from the USB device can be useful for debugging reasons, but it's neither practical nor elegant to have a single monolithic function handle the USB to MIDI conversion.</strong><p>MidiHID conveniently lets you defined functions, called event handlers, that get called only for a specific device event. They must have the following prototype, where "EVENT_NAME" is the name of the event for which the function should be called: </p><blockquote>EVENT_NAME(value, min, max)</blockquote><p>The "value", "min" and "max" parameters have the same meaning as for the _event() function.</p><blockquote>-- Example implementation of a function that gets called when the event "Button_1" happens<br />function Button_1(value, min, max)<br />    log("Button-1 = " .. value)<br />end</blockquote></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					Example Event Handlers			</td>
+	
+	
+	
+		   </tr>
+</table>
+<table class="contentpaneopen">
+
+
+
+
+<tr>
+<td valign="top" colspan="2">
+<p><strong>Here are some example event handlers:</strong></p><p>Sending a Control Change #3 MIDI message with control value 127 when the device button #1 (corresponding to event "Button_1") is pressed down (event value is zero) or control value 0 when it is released (event value is non-zero):</p><blockquote>-- Regular version<br />function Button_1(value, min, max)<br />    if value ~= 0 then<br />        midi.controlchange(3, 127)<br />    else<br />        midi.controlchange(3, 0)<br />    end<br />end<br /><br />-- Compact version<br />function Button_1(value, min, max)<br />        midi.controlchange(3, (value ~= 0) and 127 or 0)<br />end</blockquote><p>Sending Control Change #20, #21, #22 and #23 MIDI messages with control value 0 or 127 depending on the current position of a 4 positions hatswitch button on the device:</p><blockquote>function Hatswitch(value, min, max)<br />    if value == 8 then<br />        -- Hatswitch is neutral, reset MIDI controllers #20 and #21 and #22 and #23<br />        midi.controlchange(20, 0);<br />        midi.controlchange(21, 0);<br />        midi.controlchange(22, 0);<br />        midi.controlchange(23, 0);<br />    elseif value == 0 then<br />        -- Hatswitch is on position up, send MIDI controller #20<br />        midi.controlchange(20, 127);<br />    elseif value == 4 then<br />        -- Hatswitch is on position down, send MIDI controller #21<br />        midi.controlchange(21, 127);<br />    elseif value == 6 then<br />        --Hatswitch is on position down, send MIDI controller #22<br />        midi.controlchange(22, 127);<br />    elseif value == 2 then<br />        --Hatswitch is on position down, send MIDI controller #23<br />        midi.controlchange(23, 127);<br />    end<br />end</blockquote><p>Sending Control Change #10 with alternating values of 0 and 127 whenever the "System_Menu" event is received:</p><blockquote>-- We need to use a global variable "toggle" to hold remember the current state across function calls<br />toggle = 0;<br />function System_Menu(value, min, max)<br />    if value &gt; 0 then<br />        toggle = (toggle == 0) and 127 or 0<br />        midi.controlchange(10, toggle)<br />    end<br />end</blockquote><p>Remapping the value for the "Z" event from its original min & max to Control Change #1 between 0 and 127: </p><blockquote>function Z(value, min, max)<br />    value = (value - min) * (max - min) * 127<br />    midi.controlchange(1, value)<br />end</blockquote></td>
+</tr>
+
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+				</td>
+</tr>
+
+</table>
+
+					</div>
+				</div>
+
+				
+				<div class="clr"></div>
+				
+				<div id="user">
+					
+										
+										
+					<div class="clr"></div>
+ 
+				</div>
+			</div>
+		</div>
+		<div id="fuss">
+			&copy; Pierre-Olivier Latour, 2008-2009 | <a href="mailto:info@midihid.com">info@midihid.com</a>
+		</div>
+	</div>
+	
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4731571-6");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>

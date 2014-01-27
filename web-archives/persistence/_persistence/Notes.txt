@@ -1,0 +1,112 @@
+Persistence is an innovative and robust online & offline backup software for Mac OS X Leopard.
+
+-----
+
+The demo version is limited to a single backup of 250 Mb maximum over 15 days, as well as restoring only one file at a time.
+
+-----
+
+Persistence is a reliable and flexible online backup solution for Mac OS X Leopard that is compatible with most Internet servers: FTP, FTPS, SFTP, WebDAV, Amazon S3, iDisk... (it even supports offline backups to external drives). Persistence is a true Mac product that preserves Finder info, resource forks, ACLs... and comes with an elegant user interface and a powerful assistant. It also provides numerous high-end features like US government approved AES-256 encryption, efficient bz2 compression, powerful exclusion rules and scheduler, support for splitting large files during network transfers, network-error recovery, individual digital signature for backed up files, multi-cores machines optimization and more.
+
+Persistence is the best backup solution for Mac OS X users who already have access to online storage, or who simply want more control than other backup products allow, without having to resort to configuring complex utilities.
+
+-----
+
+Persistence is an innovative and robust online & offline backup software for Mac OS X Leopard. Use it to backup your essential data to servers on the Internet, external drives or USB keys.
+
+Some key Persistence features:
+
+* Provides an intuitive user interface and also includes a powerful assistant to help the user setting up new backups.
+
+* Built from the ground up to reliably backup large data sets (hundreds of gigabytes and dozens of thousands of files), as well as to be robust in case of network errors or even interrupted backups.
+
+* Fully preserves file metadata: creation and modification dates, Finder info (e.g. label or Spotlight comments), UNIX permissions, ACLs, extended attributes...
+
+* Computes digital signatures every file being backed up so that its integrity can be verified when you restore it. Digital signatures are also computed for every generated backup data file to ensure the data at the backup destination hasn't been corrupted.
+
+* Optionally protect the privacy of your data with modern AES-256 encryption (approved by the US Government to protect classified information).
+
+* Supports offline backups to external drives or USB keys, and is compatible with most online servers: WebDAV (over HTTP or HTTPS), AFP, SMB, FTP, FTPS, SFTP, Amazon S3 (over HTTP or HTTPS) or even Apple iDisk.
+
+* Provides advanced exclusion rules and scheduler settings, bzip2 data compression, automatic grouping or splitting of files in segments of a given maximum size, pre & post-backup custom executables... and is even optimized for multi-cores Macs!
+
+
+Persistence has many more innovative features, see the whole list at http://www.persistenceapp.com/features.
+
+-----
+
+Version 1.0b8
+Bug Fixes:
+* Fixed a crash that could happen during user interface updates when multiple backups are running simultaneously
+* All addresses in 10.x.x.x, 192.168.x.x and 172.16.x.x are now correctly considered to be on the local network
+
+Version 1.0b7
+Enhancements:
+* When a file fails being archived, only this file is excluded from the backup instead of all the files in the archive
+Bug Fixes:
+* Fixed a crash that could happen when a backup generated more than 4,096 data files
+* Improved reliability when connecting to FTPS servers
+* Fixed the estimated remaining time not being displayed in some circumstances
+* Fixed an issue where the backup progress in the user interface could get out-of-sync after several suspend / resume actions
+
+Version 1.0b6
+Enhancements:
+* Cleaning up stalled files at destination now works even if no backup data is present
+Bug Fixes:
+* [Web version] Prevent creation of multiple backups with same name
+* Fixed a crash that could happen when SFTP connection was restarted
+
+Version 1.0b5
+Enhancements:
+* Improved disconnection handling for SFTP and AFP / SMB protocols
+Bug Fixes:
+* Fixed some typos in error messages
+* Fixed Persistence Web activation sometimes not working
+* Fixed crashes that could occur when providing invalid Amazon S3 bucket names
+* Fixed an error that could happen when using "File Size" in the exclusion rules
+* Fixed estimated transfer speed sometimes showing abnormally high values
+
+Version 1.0b4
+* Fixed a regression introduced in 1.0b3 that prevented creation of Amazon S3 buckets in Europe
+* Fixed exclusion settings not working properly for some subdirectories of /private
+* Fixed status icon in menubar sometimes not animating while backups were in progress
+* Fixed backups with more than 1,000 data files on Amazon S3 not being recognized properly
+
+Version 1.0b3
+Enhancements:
+* Compute automatically a recommended maximum backup data file size in the Backup Assistant
+* Aborting a backup during the scanning phase is now immediate
+* Loading and saving backup information from disk is now faster
+* Reduced overall memory usage during backup operations
+* Added handler for non-recoverable internal errors
+Bug Fixes:
+* Fixed backup information not being reinitialized correctly when resetting a backup completely
+* Fixed exclusion settings not being applied when using the root of the file system as the backup source directory
+* Fixed a memory leak in the backup history
+* Fixed estimated remaining time being often inaccurate
+* Properly disable simultaneous processing checkbox on single-processor machines
+
+Version 1.0b2
+Enhancements:
+* Add an advanced preference to report all excluded invisible items when testing exclusion settings
+* Status icon now looks different if backups are active but suspended instead of running
+* Finishing phase of backups is now faster
+* Improved performance when using the destination browser in the Backup Assistant
+* Simplified first pane of the Backup Assistant
+* Added a new Backup Assistant operation to remove stalled backup data files
+Bug Fixes:
+* Fixed some minor issues in the user interface and the Backup Assistant
+* Allow .Mac member name to be specified in the Backup Assistant with or without the @mac.com or @me.com suffix
+* Now correctly ignores .AFPDeletedXXX files on AFP volumes
+* Now correctly reports an error if the initial backup is empty
+* Prevent user from selecting a directory on a non-local disk as the destination directory in the Backup Assistant
+* Fixed transfer speed display sometimes reporting abnormally high values
+* Fixed a potential crash when choosing AFP or SMB server as the destination in the Backup Assistant
+* Fixed an issue where Persistence would exit abnormally if the SFTP connection became invalid during a network operation
+* Fixed connection issues that could happen with Amazon S3 buckets at a European location
+* Fixed connections to FTP servers using Bonjour type addresses that would sometimes fail
+* Fixed directory creation or deletion sometimes failing in the destination browser of the Backup Assistant in FTP mode
+* Fixed the backup scheduler sometimes not firing properly
+
+Version 1.0b1
+Initial public release

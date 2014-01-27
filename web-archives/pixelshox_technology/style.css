@@ -1,0 +1,205 @@
+/********** ELEMENT DEFINITIONS **********/
+
+body {
+	margin: 0 0 0 0;
+	background-color: white;
+	color: black;
+	font-family: verdana, arial, sans-serif;
+	font-size: 12px;
+}
+td {
+	font-size: 12px;
+}
+img {
+	color: gray;
+}
+a {
+	color: #333366;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+    color: #336699;
+	font-weight: bold;
+    text-decoration: underline;
+}
+
+/********** CUSTOM CLASSES **********/
+
+/* Page header */
+.header1 {
+	font-size: 26px;
+	padding-top: 14px;
+	color: gray;
+}
+.header2 {
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: silver;
+}
+
+/* Page footer */
+.footer {
+	font-family: "Trebuchet MS", Geneva, Arial, sans-serif;
+	padding-bottom: 3px;
+    color: #808080;
+}
+a.footer {
+    color: #808080;
+}
+a.footer:hover {
+    color: #404040;
+}
+
+/* Page frame */
+.upper-left			{ background-color : #FFFFFF; }
+.upper-mid			{ background-color : #FFFFFF; }
+.upper-right		{ background-color : #FFFFFF; }
+.main-left			{ background-color : #FFFFFF; }
+.main-mid			{ background-color : #FFFFFF; }
+.main-right			{ background-color : #FFFFFF; }
+.lower-left			{ background-color : #FFFFFF; }
+.lower-right		{ background-color : #FFFFFF; }
+.lower-mid			{ background-color : #FFFFFF; }
+
+/* Navigation menu */
+.menu {
+	font-weight: bold;
+	background-image : url(images/menu.gif);
+	color: #606060;
+	padding: 2px;
+}
+a.menu {
+    color: #606060;
+}
+a.menu:hover {
+    color: #404040;
+}
+
+/* Column separator */
+.separator-left {
+	background-image: url(images/separator-left.gif);
+}
+.separator-right {
+	background-image: url(images/separator-right.gif);
+}
+
+/* Basic table */
+.tableheader {
+	font-weight: bold;
+	color: white;
+	background: #808080;
+	padding: 2px;
+}
+a.tableheader {
+    color: white;
+}
+a.tableheader:hover {
+	color: white;
+}
+.tableline1
+{
+	padding: 2px;
+	padding-right: 20px;
+	background: #EEEEEE;
+}
+.tableline2
+{
+	padding: 2px;
+	padding-right: 20px;
+	background: #DDDDDD;
+}
+
+/* Comments */
+.commentheader {
+	font-weight: bold;
+	color: white;
+	background: #808080;
+	padding: 2px;
+	text-align: center;
+}
+a.commentheader {
+    color: white;
+}
+a.commentheader:hover {
+	color: white;
+}
+.commentsubheader
+{
+	font-size: 11;
+	padding: 2px;
+	background: #EEEEEE;
+	text-align: center;
+}
+.commenttitle
+{
+	padding: 2px;
+	background: #BBBBBB;
+}
+.commentcontent
+{
+	padding: 2px;
+	background: #EEEEEE;
+}
+
+/* Search results */
+.searchheader {
+	font-weight: bold;
+	color: white;
+	background: #808080;
+	padding: 2px;
+}
+.searchline
+{
+	padding: 2px;
+	padding-right: 10px;
+	background: #EEEEEE;
+}
+
+/* Block */
+.blockheader {
+	background-image: url(images/block-middle.gif);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px;
+	color: #000033;
+	text-align: center;
+}
+.blockcontent {
+	font-size: 12px;
+	padding: 2px;
+}
+
+/* Box */
+.boxheader-mid {
+	background-image: url(images/boxheader-mid.gif);
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px;
+}
+.boxheadline-left {
+	background-image: url(images/headline-left.gif);
+}
+.boxheadline-mid {
+	background-image: url(images/headline-mid.gif);
+	font-size: 12px;
+	padding: 2px;
+}
+.boxheadline-right {
+	background-image: url(images/headline-right.gif);
+}
+.box-left {
+	background-image: url(images/box-left.gif);
+}
+.box-mid {
+	background-image: url(images/box-mid.gif);
+	font-size: 12px;
+	padding: 2px;
+}
+.box-right {
+	background-image: url(images/box-right.gif);
+}
+.boxfooter-mid {
+	background-image: url(images/boxfooter-mid.gif);
+}

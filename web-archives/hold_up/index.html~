@@ -1,0 +1,42 @@
+<HTML>
+
+	<HEAD>
+		<TITLE>Hold-Up Personal Finance Manager</TITLE>
+		<META http-equiv=content-type content="text/html;charset=ISO-8859-1">
+	</HEAD>
+
+	<BODY bgcolor=#ffffff link=#336699 alink=#77aadd vlink=#004466>
+		<DIV align=center><IMG src="graphics/cover.jpg" width=517 height=219 border=0 vspace=20></DIV>
+		<DIV>
+			<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+			<B>Dear Hold-Up customers,</B><BR><BR>
+				I recently finished my studies and accepted a very interesting and time-consuming full time position in a Graphic &amp; Imaging company. It unfortunately appeared to me that taking care of Hold-Up along with this new work and my other activities was not doable. I am therfor sorry to announce that there will be no new version of Hold-Up - that's why since a few weeks, Hold-Up was not available for order on the Kagi store. However, I still believe Hold-Up is a great product and I don't want it to disappear nor letting current users without any &quot;backup solution&quot;: that's why I release it as <A target="_blank" href="../index.php?page=source_code">open-source (under the GPL license)</A>, so that other developers have a chance of continuing the product.<br>
+				<br>
+				
+				Registered users can grab the Hold-Up latest version (1.7.6) <a href="users/english.php">here</a>, which works perfectly fine on Mac OS 8.6 to 10.2 and should continue to run fine for a long time.<br>
+				<br>
+				Please accept my apologies for not having informed you through a personal email, but technical limitations regarding extraction of user data from the Kagi database along with ISP limitations prevented me to do a bulk emailing.<br>
+				<br>
+				<I>Please note that technical support for registered users will continue through the <a href="forums/index.php">forum</a> or <a href="mailto:hold_up@pol-online.net">email</a> for a period of 6 months, starting July 1st 2003 (this includes releasing new versions to fix bugs if any are discovered in that period).</I><BR>
+				<BR>
+				Thank you for your having supported Hold-Up for almost 2 years!<br>
+				<br>
+				Pierre-Olivier Latour </font></DIV>
+			<HR>
+			<DIV>
+			<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular" size="2">
+			<B>Chers clients Hold-Up,</B><BR><BR>
+				J'ai recemment termine mes etudes et j'ai accepte un travail a temps complet interessant et captivant dans une societe d'infographisme. Il m'est malheureusement rapidement apparu qu'il ne serait pas realisable de continuer a maintenir Hold-Up en parallele de ce travail et de mes autres activites. Je suis donc au regret de vous annoncer la fin de tout developement sur Hold-Up - c'est d'ailleurs la raison pour laquelle Hold-Up n'est plus disponible a la vente sur Kagi depuis plusieurs semaines. Pourtant, je reste persuade de la valeur de Hold-Up et je refuse qu'il disparaisse ou que les actuels utilisateurs soient laisses dans l'oubli: c'est pourquoi je rends disponible Hold-Up en &quot;<A target="_blank" href="../index.php?page=source_code">open-source (sous license GPL)</A>&quot;, afin que d'autres developpeurs puissent continuer le produit.<br>
+				<br>
+				Les utilisateurs enregistres peuvent telecharger la derniere version de Hold-Up (1.7.6) <a href="users/english.php">ici</a>, laquelle fonctionne parfaitement de Mac OS 8.6 a 10.2, et qui devrait continuer ainsi pendant encore longtemps.<br>
+				<br>
+				Veuillez accepter mes excuses si vous n'avez pas ete prevenus par email, mais des limitations techniques m'ont empeche d'extraire les informations de la base de donnees de Kagi ainsi que de faire un email generalise depuis mon FAI.<br>
+				<br>
+				<I>Veuillez noter que le support technique pour utilisateurs enregistres continuera a travers le <a href="forums/index.php">forum</a> ou l'<a href="mailto:hold_up@pol-online.net">email</a> pendant une periode de 6 mois, a partir du 1er juillet 2003 (cela comprend des mises-a-jour pour correction de bugs si necessaire).</I><BR>
+				<BR>
+				Merci d'avoir participe au developpement de Hold-Up pendant pres de 2 ans!<br>
+				<br>
+				
+				Pierre-Olivier Latour </font></DIV>
+	</BODY>
+</HTML>

@@ -1,0 +1,275 @@
+<!-- Setup -->
+
+
+<!-- Header -->
+
+<HTML>
+
+	<HEAD>
+		<META http-equiv=content-type content="text/html;charset=ISO-8859-1">
+		<TITLE>Welcome to Pol's Code WareHouse</TITLE>
+		<CSSCRIPTDICT>
+			<SCRIPT><!--
+CSInit = new Array;
+function CSScriptInit() {
+if(typeof(skipPage) != "undefined") { if(skipPage) return; }
+idxArray = new Array;
+for(var i=0;i<CSInit.length;i++)
+	idxArray[i] = i;
+CSAction2(CSInit, idxArray);}
+CSAg = window.navigator.userAgent; CSBVers = parseInt(CSAg.charAt(CSAg.indexOf("/")+1),10);
+function IsIE() { return CSAg.indexOf("MSIE") > 0;}
+function CSIEStyl(s) { return document.all.tags("div")[s].style; }
+function CSNSStyl(s) { return CSFindElement(s,0); }
+function CSFindElement(n,ly) { if (CSBVers < 4) return document[n];
+	var curDoc = ly ? ly.document : document; var elem = curDoc[n];
+	if (!elem) { for (var i=0;i<curDoc.layers.length;i++) {
+		elem = CSFindElement(n,curDoc.layers[i]); if (elem) return elem; }}
+	return elem;
+}
+
+function CSClickReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return true; // dont follow link
+	else return false; // dont follow link
+}
+
+function CSButtonReturn () {
+	var bAgent = window.navigator.userAgent; 
+	var bAppName = window.navigator.appName;
+	if ((bAppName.indexOf("Explorer") >= 0) && (bAgent.indexOf("Mozilla/3") >= 0) && (bAgent.indexOf("Mac") >= 0))
+		return false; // follow link
+	else return true; // follow link
+}
+
+CSIm = new Object();
+function CSIShow(n,i) {
+	if (document.images) {
+		if (CSIm[n]) {
+			var img = (!IsIE()) ? CSFindElement(n,0) : document[n];
+			if (img && typeof(CSIm[n][i].src) != "undefined") {img.src = CSIm[n][i].src;}
+			if(i != 0)
+				self.status = CSIm[n][3];
+			else
+				self.status = " ";
+			return true;
+		}
+	}
+	return false;
+}
+function CSILoad(action) {
+	im = action[1];
+	if (document.images) {
+		CSIm[im] = new Object();
+		for (var i=2;i<5;i++) {
+			if (action[i] != '') { CSIm[im][i-2] = new Image(); CSIm[im][i-2].src = action[i]; }
+			else CSIm[im][i-2] = 0;
+		}
+		CSIm[im][3] = action[5];
+	}
+}
+CSStopExecution = false;
+function CSAction(array) { 
+	return CSAction2(CSAct, array);
+}
+function CSAction2(fct, array) { 
+	var result;
+	for (var i=0;i<array.length;i++) {
+		if(CSStopExecution) return false; 
+		var actArray = fct[array[i]];
+		if (actArray == null) return false;
+		var tempArray = new Array;
+		for(var j=1;j<actArray.length;j++) {
+			if((actArray[j] != null) && (typeof(actArray[j]) == "object") && (actArray[j].length == 2)) {
+				if(actArray[j][0] == "VAR") {
+					tempArray[j] = CSStateArray[actArray[j][1]];
+				}
+				else {
+					if(actArray[j][0] == "ACT") {
+						tempArray[j] = CSAction(new Array(new String(actArray[j][1])));
+					}
+				else
+					tempArray[j] = actArray[j];
+				}
+			}
+			else
+				tempArray[j] = actArray[j];
+		}			
+		result = actArray[0](tempArray);
+	}
+	return result;
+}
+CSAct = new Object;
+
+
+// --></SCRIPT>
+		</CSSCRIPTDICT>
+		<CSACTIONDICT>
+			<SCRIPT><!--
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button2',/*URL*/'menubar/graphics.jpg',/*URL*/'menubar/graphics2.jpg',/*URL*/'menubar/graphics3.jpg','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button4',/*URL*/'menubar/misc.jpg',/*URL*/'menubar/misc2.jpg',/*URL*/'menubar/misc3.jpg','');
+CSInit[CSInit.length] = new Array(CSILoad,/*CMP*/'button',/*URL*/'menubar/home.jpg',/*URL*/'menubar/home2.jpg',/*URL*/'menubar/home3.jpg','');
+
+// --></SCRIPT>
+		</CSACTIONDICT>
+	</HEAD>
+
+	<BODY bgcolor="white" link="#2f4f4f" alink="silver" vlink="#696969" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" background="images/background.jpg" text=#3c3c3c onload=CSScriptInit();>
+
+<!-- MenuBar -->
+
+		<TABLE border=0 cellpadding=0 cellspacing=0 width=740>
+		<TR><TD><IMG src="images/title.jpg" width=460 height=64 border=0></TD></TR>
+		<TR><TD><CSOBJ w=147 h=64 t=Button ht="menubar/home2.jpg" cl="menubar/home3.jpg"><A href="index.html" onmouseover="return CSIShow(/*CMP*/'button',1)" onmouseout="return CSIShow(/*CMP*/'button',0)" onclick="CSIShow(/*CMP*/'button',2);return CSButtonReturn()"><IMG src="menubar/home.jpg" width=147 height=64 name=button border=0></A></CSOBJ><CSOBJ w=148 h=64 t=Button ht="menubar/graphics2.jpg" cl="menubar/graphics3.jpg"><A href="graphics.html" onmouseover="return CSIShow(/*CMP*/'button2',1)" onmouseout="return CSIShow(/*CMP*/'button2',0)" onclick="CSIShow(/*CMP*/'button2',2);return CSButtonReturn()"><IMG src="menubar/graphics.jpg" width=148 height=64 name=button2 border=0></A></CSOBJ><IMG src="menubar/audio4.jpg" width=148 height=64 border=0><CSOBJ w=148 h=64 t=Button ht="menubar/misc2.jpg" cl="menubar/misc3.jpg"><A href="misc.html" onmouseover="return CSIShow(/*CMP*/'button4',1)" onmouseout="return CSIShow(/*CMP*/'button4',0)" onclick="CSIShow(/*CMP*/'button4',2);return CSButtonReturn()"><IMG src="menubar/misc.jpg" width=148 height=64 name=button4 border=0></A></CSOBJ><IMG src="menubar/end.jpg" width=149 height=64 border=0></TD></TR>
+		</TABLE>
+
+<!-- Content -->
+
+		<TABLE border=0 cellpadding=0 cellspacing=0 width=740>
+			<TR><TD>
+					<TABLE border=0 cellpadding=10 cellspacing=0 width=740>
+<!-- Sample listing -->
+
+
+						<TR>
+							<TD width=30>&nbsp;</TD>
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/audio.jpg" width=28 height=42 border=0 align=left hspace=10>
+<FONT size=4 face=Arial,Helvetica><B>Audio CD<BR>11/11/2000</B></FONT></P>
+								<P><A href="archives/Audio_CD.sit"><IMG src="images/stufficon.gif" width=16 height=16 border=0 align=left></A><FONT face=Arial,Helvetica size=1>Stuff-It 5.0 File<BR>
+									[ <A href="archives/Audio_CD.sit">Download</A> ]</FONT></P>
+							</TD>
+							<TD width=10>&nbsp;</TD>
+							<TD valign=top width=460>
+								
+<P><FONT size=5 face=Arial,Helvetica><I>Play audio CDs.<B><BR>
+			</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This sample code allows you to play audio CDs from your program. It contains all the necessary routines to manipulate the CD driver: play and loop a given track, set / get volume, count tracks, check for inserted CD... <BR>
+		Works with official Apple CD/DVD players only.</FONT></P>
+							</TD>
+						</TR>
+						<TR height=10>
+							<TD colspan=4 height=10>&nbsp;</TD>
+						</TR>
+
+
+						<TR>
+							<TD width=30>&nbsp;</TD>
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/audio.jpg" width=28 height=42 border=0 align=left hspace=10>
+<FONT size=4 face=Arial,Helvetica><B>Audio Engine<BR>2/18/2001</B></FONT></P>
+								<P><A href="archives/Audio_Engine.sit"><IMG src="images/stufficon.gif" width=16 height=16 border=0 align=left></A><FONT face=Arial,Helvetica size=1>Stuff-It 5.0 File<BR>
+									[ <A href="archives/Audio_Engine.sit">Download</A> ]</FONT></P>
+							</TD>
+							<TD width=10>&nbsp;</TD>
+							<TD valign=top width=460>
+								
+<P><FONT size=5 face=Arial,Helvetica><I>2D/3D Audio Engine.<B><BR>
+			</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This sample code contains a complete 2D/3D audio engine with the following features:</FONT></P>
+<UL>
+	<LI><FONT face=Arial,Helvetica>up to 128 simultaneous channels with independant pitch, panoramic and volume controls,</FONT>
+	<LI><FONT face=Arial,Helvetica>all mixing done in floating-point computations for highest possible quality,</FONT>
+	<LI><FONT face=Arial,Helvetica>linear interpolation,</FONT>
+	<LI><FONT face=Arial,Helvetica>16 Bits 22Khz mono or stereo input,</FONT>
+	<LI><FONT face=Arial,Helvetica>16 Bits 44Khz interpolated stereo output,</FONT>
+	<LI><FONT face=Arial,Helvetica>stereo localization,</FONT>
+	<LI><FONT face=Arial,Helvetica>low latency,</FONT>
+	<LI><FONT face=Arial,Helvetica>looping sounds,</FONT>
+	<LI><FONT face=Arial,Helvetica>random sounds,</FONT>
+	<LI><FONT face=Arial,Helvetica>can be connected to multiple applications at the same time</FONT>
+</UL>
+							</TD>
+						</TR>
+						<TR height=10>
+							<TD colspan=4 height=10>&nbsp;</TD>
+						</TR>
+
+
+						<TR>
+							<TD width=30>&nbsp;</TD>
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/audio.jpg" width=28 height=42 border=0 align=left hspace=10>
+<FONT size=4 face=Arial,Helvetica><B>MP3 Player<BR>11/11/2000</B></FONT></P>
+								<P><A href="archives/MP3_Player.sit"><IMG src="images/stufficon.gif" width=16 height=16 border=0 align=left></A><FONT face=Arial,Helvetica size=1>Stuff-It 5.0 File<BR>
+									[ <A href="archives/MP3_Player.sit">Download</A> ]</FONT></P>
+							</TD>
+							<TD width=10>&nbsp;</TD>
+							<TD valign=top width=460>
+								
+<P><FONT size=5 face=Arial,Helvetica><I>Play MP3 files asynchronously!<B><BR>
+			</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This sample code allows you to play and loop indefinitely any MP3 file (no VBR though) truly asynchronously. It does not use QuickTime to decompress the MP3 data, but low-level Sound Manager interface; QuickTime is only used to extract the decompression info from the MP3 file.<BR>
+		Since this code uses the Sound Manager conversion routines to decompress the MP3 data, which code is already licensed, you don't need to pay any royalties to use this sample code.</FONT></P>
+							</TD>
+						</TR>
+						<TR height=10>
+							<TD colspan=4 height=10>&nbsp;</TD>
+						</TR>
+
+
+						<TR>
+							<TD width=30>&nbsp;</TD>
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/audio.jpg" width=28 height=42 border=0 align=left hspace=10>
+<FONT size=4 face=Arial,Helvetica><B>QDesign Player<BR>11/11/2000</B></FONT></P>
+								<P><A href="archives/QDesign_Player.sit"><IMG src="images/stufficon.gif" width=16 height=16 border=0 align=left></A><FONT face=Arial,Helvetica size=1>Stuff-It 5.0 File<BR>
+									[ <A href="archives/QDesign_Player.sit">Download</A> ]</FONT></P>
+							</TD>
+							<TD width=10>&nbsp;</TD>
+							<TD valign=top width=460>
+								
+<P><FONT size=5 face=Arial,Helvetica><I>Play AIFF QDesign files asynchronously!<B><BR>
+			</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This sample code allows you to play and loop indefinitely any QDesign encoded AIFF file truly asynchronously. It does not use QuickTime to decompress the QDesign data, but low-level Sound Manager interface.</FONT></P>
+							</TD>
+						</TR>
+						<TR height=10>
+							<TD colspan=4 height=10>&nbsp;</TD>
+						</TR>
+
+
+						<TR>
+							<TD width=30>&nbsp;</TD>
+							<TD width=160 background="images/background2.jpg" valign=top>
+								<P><IMG src="images/audio.jpg" width=28 height=42 border=0 align=left hspace=10>
+<FONT size=4 face=Arial,Helvetica><B>Sound Utils<BR>11/11/2000</B></FONT></P>
+								<P><A href="archives/Sound_Utils.sit"><IMG src="images/stufficon.gif" width=16 height=16 border=0 align=left></A><FONT face=Arial,Helvetica size=1>Stuff-It 5.0 File<BR>
+									[ <A href="archives/Sound_Utils.sit">Download</A> ]</FONT></P>
+							</TD>
+							<TD width=10>&nbsp;</TD>
+							<TD valign=top width=460>
+								
+<P><FONT size=5 face=Arial,Helvetica><I>Useful sound utility routines.<B><BR>
+			</B></I></FONT></P>
+<P><FONT face=Arial,Helvetica>This sample code contains a set of useful routines to load and play MacOS sounds in standard System 7 sound format ('snd ' resources and 'sfil' files).</FONT></P>
+							</TD>
+						</TR>
+						<TR height=10>
+							<TD colspan=4 height=10>&nbsp;</TD>
+						</TR>
+
+
+					</TABLE>
+				</TD></TR>
+
+<!-- Footer -->
+			<TR>
+				<TD height=15>&nbsp;</TD>
+			</TR>
+			<TR><TD>
+				
+<HR width=90%>
+<DIV align=center>
+	<P><FONT size="2" face="Arial,Helvetica">&copy; <A href="mailto:pol@french-touch.net">Pierre-Olivier Latour</A> 2000 - All rights reserved<BR>
+			This web site is not affiliated with French Touch in any way.</FONT></P>
+</DIV>
+<DIV align=right>
+						<P><FONT size=1 face=Arial,Helvetica color=#969696>Page generated 7/11/2002 15:24</FONT></P>
+					</DIV>
+				</TD></TR>
+		</TABLE>
+	</BODY>
+</HTML>
